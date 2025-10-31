@@ -1,0 +1,250 @@
+/* ========== VIDEO BACKGROUND ========== */
+.home-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ========== FULLSCREEN VIDEO BACKGROUND ========== */
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/*  text */
+
+.overlay {
+  position: relative; 
+  color: #fff;
+  text-align: center;
+  padding: 100px;
+  margin-top: 70px; 
+  opacity: 0;             
+  animation: overlayFadeIn 1.5s ease forwards; 
+}
+
+/*heading */
+.overlay h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  margin-top: 100px;   
+  padding-top: 20px;  
+  opacity: 0;
+  animation: slideInFromTop 1.5s ease forwards;
+  animation-delay: 0.5s;   }
+
+/*  paragraph */
+.overlay p {
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  margin-top: 20px;   
+  padding-top: 10px;  
+  opacity: 0;
+  animation: slideInFromBottom 1.5s ease forwards;
+  animation-delay: 1s;   
+}
+
+/* Keyframes for overlay fade-in */
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Heading slide-in from top */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Paragraph slide-in from bottom */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/*menu section */
+.menu-section {
+  position: relative;
+  z-index: 1; 
+  background: rgba(255, 255, 255, 0.9); 
+  padding: 50px 20px;
+
+}
+.menu-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+ 
+}
+
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.menu-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-bottom: 2px dashed #e0e0e0;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.menu-card:hover {
+  transform: scale(1.03);
+}
+
+.menu-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.menu-info {
+  flex: 1;
+  text-align: left;
+}
+
+.menu-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  font-weight: 600;
+   text-align: center; }
+
+.menu-info p {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #2d4a36;
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+.category-block {
+  margin-bottom: 50px;
+}
+
+.category-heading {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  text-align: center;   
+  color: #2d4a36;
+  border-left: none;    
+  border-bottom: 3px solid #e63946; 
+  display: inline-block;
+  padding: 0 10px;
+}
+
+/* ========== MODAL POPUP ========== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;  
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.modal-content img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.modal-content h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.modal-content .price {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #2d4a36;
+}
+
+/* Cross Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #e63946;  
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,126 @@
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background: #f8f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Navbar on scroll */
+.navbar.navbar-scrolled {
+  background: #f8f7f7cc; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Container */
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #030303;
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Logo */
+.nav-logo img {
+  height: 55px;
+  width: auto;
+  border-radius: 8px;
+}
+
+/* Address */
+.nav-address p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  color: #080808;
+}
+
+/* Right Section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Social Icons */
+.social-icons a {
+  color: #0a0a0a;
+  font-size: 1.2rem;
+  margin-right: 10px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+  transform: scale(1.2);
+}
+
+/* Contact */
+.nav-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #ffcc00;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    height: auto;
+    padding: 10px;
+  }
+
+  .nav-logo img {
+    height: 45px;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+.nav-login .login-btn {
+  background: #0b4da2;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-left: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.nav-login .login-btn:hover {
+  background: #08357a;
+}
